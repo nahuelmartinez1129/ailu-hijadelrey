@@ -42,14 +42,33 @@ function mostrarPalabra() {
     const palabra =
     palabras[Math.floor(Math.random() * palabras.length)];
 
-    document.getElementById("versiculo-texto").textContent =
+    const versiculo =
+    document.getElementById("versiculo-texto");
+
+    const referencia =
+    document.getElementById("versiculo-referencia");
+
+    const reflexion =
+    document.getElementById("reflexion-texto");
+
+    versiculo.classList.remove("fade");
+    referencia.classList.remove("fade");
+    reflexion.classList.remove("fade");
+
+    void versiculo.offsetWidth;
+
+    versiculo.textContent =
     `"${palabra.versiculo}"`;
 
-    document.getElementById("versiculo-referencia").textContent =
+    referencia.textContent =
     palabra.referencia;
 
-    document.getElementById("reflexion-texto").textContent =
+    reflexion.textContent =
     palabra.reflexion;
+
+    versiculo.classList.add("fade");
+    referencia.classList.add("fade");
+    reflexion.classList.add("fade");
 }
 
 mostrarPalabra();
@@ -57,3 +76,43 @@ mostrarPalabra();
 document
 .getElementById("nueva-palabra")
 .addEventListener("click", mostrarPalabra);
+
+const palabraCard =
+document.querySelector(".palabra-card");
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            palabraCard.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.3
+});
+
+observer.observe(palabraCard);
+
+const botonHero =
+document.getElementById("descubrir-palabra");
+
+botonHero.addEventListener("click",(e)=>{
+
+    e.preventDefault();
+
+    const seccion =
+    document.getElementById("palabra-hoy");
+
+    seccion.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+});

@@ -3,7 +3,9 @@
     padding:0;
     box-sizing:border-box;
 }
-
+html{
+    scroll-behavior:smooth;
+}
 :root{
     --beige:#F7F3EE;
     --rosa:#E9D7D1;
@@ -16,11 +18,17 @@ body{
     font-family:'Montserrat', sans-serif;
     background:var(--beige);
 }
+.hero-subtitle,
+.hero h1,
+.hero p,
+.hero-buttons{
 
+    opacity:0;
+}
 .hero{
     position:relative;
     min-height:100vh;
-
+    background-attachment:fixed;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -55,6 +63,7 @@ body{
 
     font-size:1rem;
     letter-spacing:2px;
+    animation:fadeUp 1s ease forwards;
 }
 
 .hero h1{
@@ -62,8 +71,11 @@ body{
 
     font-size:5rem;
     font-weight:600;
-
+    text-shadow:
+    0 0 20px rgba(255,255,255,.2);
     margin-bottom:20px;
+     animation:fadeUp 1s ease forwards,
+    glow 4s ease-in-out infinite;
 }
 
 .hero p{
@@ -72,6 +84,8 @@ body{
 
     max-width:600px;
     margin:auto auto 40px;
+    animation:fadeUp 1s ease forwards;
+    animation-delay:.8s;
 }
 
 .hero-buttons{
@@ -79,6 +93,8 @@ body{
     justify-content:center;
     gap:15px;
     flex-wrap:wrap;
+    animation:fadeUp 1s ease forwards;
+    animation-delay:1.2s;
 }
 
 .btn-primary,
@@ -111,7 +127,16 @@ body{
     background:white;
     color:black;
 }
+.scroll-indicator{
 
+    margin-top:50px;
+
+    font-size:2rem;
+
+    animation:bounce 2s infinite;
+
+    color:white;
+}
 /* =====================
    PALABRA PARA HOY
 ===================== */
@@ -149,6 +174,18 @@ body{
     padding:50px;
     border-radius:25px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
+    opacity:0;
+    transform:translateY(60px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.palabra-card.show{
+
+    opacity:1;
+    transform:translateY(0);
 }
 
 .versiculo-box,
@@ -395,4 +432,222 @@ footer p{
 footer span{
 
     opacity:.8;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 1024px){
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .palabra-hoy h2,
+    .videos-section h2,
+    .redes-section h2{
+        font-size:2.5rem;
+    }
+
+    .palabra-card{
+        padding:40px;
+    }
+
+    .videos-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+/*KEYFRAMES*/
+.fade{
+
+    animation:fadeIn .7s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+}
+
+@keyframes glow{
+
+    0%{
+        text-shadow:0 0 10px rgba(255,255,255,.15);
+    }
+
+    50%{
+        text-shadow:0 0 25px rgba(255,255,255,.35);
+    }
+
+    100%{
+        text-shadow:0 0 10px rgba(255,255,255,.15);
+    }
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(10px);
+    }
+}
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px){
+
+    .hero{
+        padding:40px 20px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+        line-height:1.1;
+    }
+
+    .hero p{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    .hero-subtitle{
+        font-size:.9rem;
+        letter-spacing:1px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+    }
+
+    .palabra-hoy,
+    .videos-section,
+    .redes-section{
+        padding:70px 20px;
+    }
+
+    .palabra-hoy h2,
+    .videos-section h2,
+    .redes-section h2{
+        font-size:2rem;
+    }
+
+    .palabra-card{
+        padding:30px 20px;
+    }
+
+    #versiculo-texto{
+        font-size:1.2rem;
+    }
+
+    #reflexion-texto{
+        font-size:1rem;
+        line-height:1.8;
+    }
+
+    .videos-grid{
+        grid-template-columns:1fr;
+    }
+
+    .video-card iframe{
+        height:220px;
+    }
+
+    .red-social{
+        width:100%;
+        max-width:320px;
+    }
+}
+
+/* ==========================
+   MOBILE PEQUEÑO
+========================== */
+
+@media (max-width: 480px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero p{
+        font-size:.95rem;
+    }
+
+    .palabra-hoy h2,
+    .videos-section h2,
+    .redes-section h2{
+        font-size:1.8rem;
+    }
+
+    #versiculo-texto{
+        font-size:1.1rem;
+    }
+
+    .versiculo-box h3,
+    .reflexion-box h3{
+        font-size:1rem;
+    }
+
+    .btn-palabra{
+        width:100%;
+    }
+
+    .video-card iframe{
+        height:200px;
+    }
+
+    footer{
+        font-size:.9rem;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1024px){
+
+    .hero{
+        background-attachment:fixed;
+    }
+
 }
