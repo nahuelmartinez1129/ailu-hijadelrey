@@ -1,46 +1,26 @@
-const palabras = [
 
-{
-    versiculo: "No temas porque yo estoy contigo.",
-    referencia: "Isaías 41:10",
-    reflexion:
-    "A veces el miedo aparece cuando no sabemos qué va a pasar mañana. Dios no promete una vida sin dificultades, pero sí promete caminar con nosotros en cada paso."
-},
 
-{
-    versiculo: "Todo lo puedo en Cristo que me fortalece.",
-    referencia: "Filipenses 4:13",
-    reflexion:
-    "Cuando sentís que no podés más, recordá que tu fuerza no depende solamente de vos. Dios puede sostenerte incluso en los momentos más difíciles."
-},
+/* =========================
+   FECHA
+========================= */
 
-{
-    versiculo: "El Señor es mi pastor, nada me faltará.",
-    referencia: "Salmos 23:1",
-    reflexion:
-    "Dios conoce cada necesidad de tu vida. Aunque hoy no veas la respuesta, podés confiar en que Él sigue cuidando de vos."
-},
+const fechaElemento =
+document.getElementById("fecha-palabra");
 
-{
-    versiculo: "Porque yo sé los planes que tengo para ustedes.",
-    referencia: "Jeremías 29:11",
-    reflexion:
-    "Puede que no entiendas todo lo que está pasando, pero Dios sigue escribiendo tu historia con propósito y amor."
-},
+const hoy = new Date();
 
-{
-    versiculo: "La paz les dejo, mi paz les doy.",
-    referencia: "Juan 14:27",
-    reflexion:
-    "La paz que Dios ofrece no depende de las circunstancias. Incluso en medio del caos, Él puede traer descanso a tu corazón."
-}
+fechaElemento.textContent =
+hoy.toLocaleDateString("es-AR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+});
 
-];
+/* =========================
+   RENDERIZAR
+========================= */
 
-function mostrarPalabra() {
-
-    const palabra =
-    palabras[Math.floor(Math.random() * palabras.length)];
+function renderizarPalabra(palabra){
 
     const versiculo =
     document.getElementById("versiculo-texto");
@@ -71,11 +51,68 @@ function mostrarPalabra() {
     reflexion.classList.add("fade");
 }
 
-mostrarPalabra();
+/* =========================
+   PALABRA DEL DÍA
+========================= */
+
+function obtenerPalabraDelDia(){
+
+    const hoy = new Date();
+
+    const inicioAnio =
+    new Date(hoy.getFullYear(), 0, 0);
+
+    const diferencia =
+    hoy - inicioAnio;
+
+    const diaDelAnio =
+    Math.floor(
+        diferencia / 86400000
+    );
+
+    return palabras[
+        diaDelAnio % palabras.length
+    ];
+}
+
+/* =========================
+   CARGA INICIAL
+========================= */
+
+renderizarPalabra(
+    obtenerPalabraDelDia()
+);
+
+/* =========================
+   OTRA PALABRA
+========================= */
+
+let ultimoIndice = -1;
 
 document
 .getElementById("nueva-palabra")
-.addEventListener("click", mostrarPalabra);
+.addEventListener("click", ()=>{
+
+    let nuevoIndice;
+
+    do{
+
+        nuevoIndice =
+        Math.floor(
+            Math.random() * palabras.length
+        );
+
+    }while(
+        nuevoIndice === ultimoIndice
+    );
+
+    ultimoIndice = nuevoIndice;
+
+    renderizarPalabra(
+        palabras[nuevoIndice]
+    );
+
+});
 
 const palabraCard =
 document.querySelector(".palabra-card");
@@ -112,6 +149,41 @@ botonHero.addEventListener("click",(e)=>{
     seccion.scrollIntoView({
 
         behavior:"smooth"
+
+    });
+
+});
+
+/* ====================
+   ACORDEÓN CONTENIDO
+==================== */
+
+const categorias =
+document.querySelectorAll(".categoria-btn");
+
+categorias.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        const contenido =
+        btn.nextElementSibling;
+
+        contenido.classList.toggle("active");
+
+        const icono =
+        btn.querySelector("span");
+
+        if(
+            contenido.classList.contains("active")
+        ){
+
+            icono.textContent = "−";
+
+        }else{
+
+            icono.textContent = "+";
+
+        }
 
     });
 
