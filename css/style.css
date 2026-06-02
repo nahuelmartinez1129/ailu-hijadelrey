@@ -346,6 +346,7 @@ body{
 
     align-items:center;
 
+    color:var(--marron);
     box-shadow:0 10px 20px rgba(0,0,0,.08);
 
     transition:.3s;
@@ -354,6 +355,20 @@ body{
 .categoria-btn:hover{
 
     transform:translateY(-3px);
+}
+
+.categoria-btn i{
+
+    color:var(--dorado);
+}
+
+.categoria-btn span{
+
+    color:var(--dorado);
+
+    font-size:1.4rem;
+
+    font-weight:700;
 }
 
 .categoria-content{
