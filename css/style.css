@@ -451,6 +451,281 @@ body{
     box-shadow:0 10px 20px rgba(0,0,0,.08);
 }
 
+/* ====================
+   JUEGOS BÍBLICOS
+==================== */
+
+.juegos-section{
+
+    padding:100px 20px;
+
+    background:#fff;
+}
+
+.juegos-section h2{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    color:var(--marron);
+
+    margin-bottom:20px;
+
+    font-family:'Cormorant Garamond', serif;
+}
+
+.juegos-text{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 50px;
+
+    color:#555;
+
+    line-height:1.8;
+}
+
+.juego-card{
+
+    max-width:800px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    text-align:center;
+}
+
+.contador{
+
+    color:var(--dorado);
+
+    font-weight:600;
+
+    margin-bottom:20px;
+}
+
+#pregunta{
+
+    font-size:1.5rem;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+}
+
+.juego-botones{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.juego-botones button i{
+    margin-right: 8px;
+}
+
+.juego-botones button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    transition:.3s;
+}
+
+#btn-verdadero{
+
+    background:#7BB274;
+
+    color:white;
+}
+
+#btn-falso{
+
+    background:#D96C6C;
+
+    color:white;
+}
+
+.juego-botones button:hover{
+
+    transform:translateY(-3px);
+}
+
+#resultado{
+
+    margin-top:30px;
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+}
+
+.btn-siguiente{
+
+    display:none;
+
+    margin:30px auto 0;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    background:var(--dorado);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.puntaje{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:var(--dorado);
+
+    font-size:1.1rem;
+
+    font-weight:600;
+}
+
+.progreso-container{
+
+    width:100%;
+
+    height:14px;
+
+    background:#eee;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+}
+
+.progreso-barra{
+
+    width:10%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--dorado),
+        #e8c99c
+    );
+
+    transition:.4s;
+}
+
+.progreso-texto{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:var(--marron);
+
+    font-weight:600;
+}
+
+.mensaje-final{
+
+    margin-top:20px;
+
+    font-size:1.2rem;
+
+    color:var(--marron);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+}
+
+/* ANIMACIONES */
+
+.slide-out{
+
+    animation:slideOut .4s forwards;
+}
+
+.slide-in{
+
+    animation:slideIn .4s forwards;
+}
+
+@keyframes slideOut{
+
+    from{
+
+        opacity:1;
+
+        transform:translateX(0);
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:translateX(-80px);
+    }
+}
+
+@keyframes slideIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(80px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+    }
+}
+
+.juego-botones button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
 /* ===================
    REDES SOCIALES
 =================== */
@@ -657,6 +932,94 @@ footer span{
 
     50%{
         transform:translateY(10px);
+    }
+}
+
+.slide-out{
+
+    animation:slideOut .4s forwards;
+}
+
+.slide-in{
+
+    animation:slideIn .4s forwards;
+}
+
+@keyframes slideOut{
+
+    from{
+
+        opacity:1;
+        transform:translateX(0);
+    }
+
+    to{
+
+        opacity:0;
+        transform:translateX(-100px);
+    }
+}
+
+@keyframes slideIn{
+
+    from{
+
+        opacity:0;
+        transform:translateX(100px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+.puntaje{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:1.1rem;
+
+    color:var(--dorado);
+
+    font-weight:600;
+}
+
+.slide-out{
+
+    animation:slideOut .4s forwards;
+}
+
+.slide-in{
+
+    animation:slideIn .4s forwards;
+}
+
+@keyframes slideOut{
+
+    from{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+    to{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+}
+
+@keyframes slideIn{
+
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
     }
 }
 /* ==========================
