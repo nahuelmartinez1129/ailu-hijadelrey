@@ -15,36 +15,52 @@ const progresoTotal = document.getElementById("progreso-total");
 let indicePregunta = 0;
 let puntaje = 0;
 let rondaActual = [];
+let preguntasDisponibles = [];
 let respondida = false;
 
 function iniciarRonda(){
 
+    indicePregunta = 0;
+    puntaje = 0;
 
-indicePregunta = 0;
-puntaje = 0;
+    puntajeElemento.textContent = puntaje;
 
-puntajeElemento.textContent = puntaje;
+    if(
+        preguntasDisponibles.length <
+        TOTAL_RONDA
+    ){
 
-rondaActual = [...preguntasVF]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, TOTAL_RONDA);
+        preguntasDisponibles =
+        [...preguntasVF]
+        .sort(() => Math.random() - 0.5);
+    }
 
-progresoTotal.textContent = TOTAL_RONDA;
+    rondaActual =
+    preguntasDisponibles.splice(
+        0,
+        TOTAL_RONDA
+    );
 
-siguienteBtn.innerHTML =
-'<i class="fa-solid fa-arrow-right"></i> Siguiente';
+    progresoTotal.textContent =
+    TOTAL_RONDA;
 
-document.getElementById("btn-verdadero").style.display = "inline-flex";
-document.getElementById("btn-falso").style.display = "inline-flex";
+    siguienteBtn.innerHTML =
+    '<i class="fa-solid fa-arrow-right"></i> Siguiente';
 
-document.getElementById("btn-verdadero").disabled = false;
-document.getElementById("btn-falso").disabled = false;
+    document.getElementById("btn-verdadero").style.display =
+    "inline-flex";
 
-cargarPregunta();
+    document.getElementById("btn-falso").style.display =
+    "inline-flex";
 
+    document.getElementById("btn-verdadero").disabled =
+    false;
 
+    document.getElementById("btn-falso").disabled =
+    false;
+
+    cargarPregunta();
 }
-
 function cargarPregunta(){
 
     respondida = false;
