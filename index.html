@@ -495,6 +495,178 @@
 
 </section>
 
+<section class="preguntados-section">
+
+    <div class="container">
+
+        <span class="section-tag">
+           Desafía tu conocimiento
+        </span>
+
+        <h2> <i class="fa-solid fa-gamepad"></i>
+            Preguntados Bíblico </h2>
+
+        <p class="juegos-text">
+            Elegí una categoría y avanzá nivel por nivel mientras aprendés más sobre la Palabra de Dios.
+        </p>
+
+        <!-- CATEGORIAS -->
+
+        <div class="categorias-grid">
+
+            <div
+                class="categoria-card antiguo"
+                id="btn-antiguo"
+                data-categoria="antiguo">
+
+                <i class="fa-solid fa-scroll"></i>
+
+                <h3>Antiguo Testamento</h3>
+
+                <p>Nivel 1</p>
+
+            </div>
+
+            <div
+                class="categoria-card nuevo"
+                id="btn-nuevo"
+                data-categoria="nuevo">
+
+                <i class="fa-solid fa-cross"></i>
+
+                <h3>Nuevo Testamento</h3>
+
+                <p>Próximamente</p>
+
+            </div>
+
+            <div
+                class="categoria-card milagros"
+                id="btn-milagros"
+                data-categoria="milagros">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Milagros y Señales</h3>
+
+                <p>Próximamente</p>
+
+            </div>
+
+            <div
+                class="categoria-card ensenanzas"
+                id="btn-ensenanzas"
+                data-categoria="ensenanzas">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <h3>Versículos y Enseñanzas</h3>
+
+                <p>Próximamente</p>
+
+            </div>
+
+            <div
+                class="categoria-card lugares"
+                id="btn-lugares"
+                data-categoria="lugares">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                <h3>Lugares y Eventos Bíblicos</h3>
+
+                <p>Próximamente</p>
+
+            </div>
+
+        </div>
+
+        <!-- JUEGO -->
+
+        <div
+            id="juego-preguntados"
+            class="juego-preguntados oculto">
+
+            <button
+                id="volver-categorias"
+                class="btn-volver">
+
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver
+
+            </button>
+
+            <div class="categoria-activa">
+
+                <i class="fa-solid fa-scroll"></i>
+
+                <span>
+                    Antiguo Testamento
+                </span>
+
+            </div>
+
+            <div class="puntaje-preguntados">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                Puntaje:
+
+                <span id="puntaje-preguntados">
+                    0
+                </span>
+
+            </div>
+
+            <div class="progreso-container">
+
+                <div
+                    class="progreso-barra"
+                    id="progreso-preguntados">
+                </div>
+
+            </div>
+
+            <div class="contador">
+
+                Pregunta
+
+                <span id="pregunta-actual">
+                    1
+                </span>
+
+                de
+
+                <span id="pregunta-total">
+                    10
+                </span>
+
+            </div>
+
+            <h3 id="pregunta-preguntados"></h3>
+
+            <div
+                id="opciones-preguntados"
+                class="opciones-preguntados">
+
+            </div>
+
+            <div id="resultado-preguntados"></div>
+
+            <button
+                id="siguiente-preguntados"
+                class="btn-siguiente">
+
+                Siguiente
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
 <section class="redes-section">
 
     <div class="container">
@@ -549,10 +721,16 @@
 
     <script src="https://kit.fontawesome.com/83bd053065.js" crossorigin="anonymous"></script>
     <script src="js/palabras.js"></script>
+    
     <script src="js/array-vf.js"></script>
     <script src="js/juego-vf.js"></script>
+
+
     <script src="js/array-biblia.js"></script>
     <script src="js/juego-biblia.js"></script>
+
+    <script src="js/preguntas/antiguo-testamento-n1.js"></script>
+    <script src="js/preguntados.js"></script>
     <script src="js/app.js"></script>
 
 </body>

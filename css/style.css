@@ -864,6 +864,385 @@ body{
     transform:none;
 }
 
+@keyframes seleccionCategoria{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+    100%{
+        transform:scale(1.08);
+    }
+
+}
+
+/*PREGUNTADOS SECTION*/
+.preguntados-section{
+
+    padding:80px 20px;
+
+}
+
+.preguntados-section h2{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    color:#7D5A50;
+
+    margin-bottom:15px;
+
+    font-family:'Cormorant Garamond', serif;
+
+}
+
+.preguntados-section h2 i{
+
+    color:#D4AF37;
+
+    margin-right:10px;
+
+}
+
+.section-tag{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#C9A66B;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.categorias-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+.categoria-card{
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition: .35s ease;
+
+}
+
+.categoria-card.activa{
+
+    animation:
+    seleccionCategoria .35s ease;
+
+}
+
+.categoria-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.categoria-card i{
+
+    font-size:2.5rem;
+
+    margin-bottom:15px;
+
+}
+
+.antiguo{
+
+    border-top:6px solid #EAB308;
+
+}
+
+.antiguo i{
+
+    color:#EAB308;
+
+}
+
+.nuevo{
+
+    border-top:6px solid #3B82F6;
+
+}
+
+.nuevo i{
+
+    color:#3B82F6;
+
+}
+
+.milagros{
+
+    border-top:6px solid #EF4444;
+
+}
+
+.milagros i{
+
+    color:#EF4444;
+
+}
+
+.ensenanzas{
+
+    border-top:6px solid #A855F7;
+
+}
+
+.ensenanzas i{
+
+    color:#A855F7;
+
+}
+
+.lugares{
+
+    border-top:6px solid #22C55E;
+
+}
+
+.lugares i{
+
+    color:#22C55E;
+
+}
+
+/* JUEGO */
+
+.oculto{
+
+    display:none;
+
+}
+
+.juego-preguntados{
+
+    margin-top:50px;
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.btn-volver{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.categoria-activa{
+
+    text-align:center;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:#EAB308;
+
+    margin-bottom:25px;
+
+}
+
+.puntaje-preguntados{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+#pregunta-preguntados{
+
+    text-align:center;
+
+    margin:40px 0;
+
+    font-size:1.5rem;
+
+    line-height:1.5;
+
+}
+
+.opciones-preguntados{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.opciones-preguntados button{
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    background:#F9ECD9;
+
+    transition:.3s;
+
+    font-size:1rem;
+
+}
+
+.opciones-preguntados button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+#resultado-preguntados{
+
+    margin-top:30px;
+
+    text-align:center;
+
+}
+
+#siguiente-preguntados{
+
+    margin-top:25px;
+
+    width:100%;
+
+}
+
+.opciones-preguntados button.correcta{
+
+    background:#6BAC73;
+    color:white;
+
+}
+
+.opciones-preguntados button.incorrecta{
+
+    background:#d96a6a;
+    color:white;
+
+}
+
+.correcto-animacion{
+
+    color:#6BAC73;
+    font-weight:700;
+
+    animation:popCorrecto .4s ease;
+
+}
+
+.incorrecto-animacion{
+
+    color:#d96a6a;
+    font-weight:700;
+
+    animation:shake .4s ease;
+
+}
+
+@keyframes popCorrecto{
+
+    0%{
+        transform:scale(.8);
+        opacity:0;
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+@keyframes shake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-8px);
+    }
+
+    50%{
+        transform:translateX(8px);
+    }
+
+    75%{
+        transform:translateX(-8px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+.shake-card{
+
+    animation: shake .4s ease;
+
+}
+
 /* ===================
    REDES SOCIALES
 =================== */
@@ -1249,6 +1628,13 @@ footer span{
         width:100%;
         max-width:320px;
     }
+    .juegos-section h2,
+    .preguntados-section h2{
+
+        font-size: 2.4rem;
+        line-height: 1.2;
+
+    }
 }
 
 /* ==========================
@@ -1286,6 +1672,15 @@ footer span{
 
     .video-card iframe{
         height:200px;
+    }
+
+     .juegos-section h2,
+    .preguntados-section h2{
+
+        font-size: 2rem;
+        line-height: 1.2;
+        padding: 0 10px;
+
     }
 
     footer{
