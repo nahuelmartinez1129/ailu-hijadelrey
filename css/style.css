@@ -671,6 +671,144 @@ body{
     gap:10px;
 }
 
+
+/*ESTA EN LA BIBLIA*/
+.juego-biblia-card{
+
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+#frase-biblia{
+
+    font-size:1.3rem;
+    font-weight:700;
+
+
+    line-height:1.7;
+
+    text-align:center;
+
+    margin:25px 0;
+
+}
+
+
+.botones-biblia{
+
+    display:flex;
+    gap:15px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+#btn-si,
+#btn-no{
+
+    border:none;
+
+    padding:14px 24px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+#btn-si{
+
+    background:#6BAC73;
+    color:white;
+
+}
+
+#btn-no{
+
+    background:#EBAF2B;
+    color:white;
+
+}
+
+#btn-si:hover,
+#btn-no:hover{
+
+    transform:translateY(-3px);
+
+}
+
+#btn-si:disabled,
+#btn-no:disabled{
+
+    opacity:.6;
+    cursor:not-allowed;
+
+}
+
+.resultado-biblia{
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+.resultado-biblia p{
+
+    margin:10px 0;
+
+}
+
+.mensaje-final{
+
+    margin-top:20px;
+
+    font-size:1.1rem;
+
+    color:#166D20;
+
+}
+
+#frase-bilbia{
+
+    font-size:1.3rem;
+    font-style:italic;
+
+    line-height:1.8;
+
+    color:#166D20;
+
+    text-align:center;
+
+    padding:25px;
+
+    background:#F9ECD9;
+
+    border-left:6px solid #EBAF2B;
+
+    border-radius:15px;
+
+    margin:20px 0;
+
+}
+
+#resultado-biblia{
+    margin-top: 30px;
+
+    text-align: center;
+
+    min-height: 60px;
+}
+
 /* ANIMACIONES */
 
 .slide-out{
