@@ -30,6 +30,18 @@ document.getElementById("siguiente-preguntados");
 const btnAntiguoPreguntados =
 document.getElementById("btn-antiguo");
 
+const btnNuevoPreguntados =
+document.getElementById("btn-nuevo");
+
+const btnMilagrosPreguntados =
+document.getElementById("btn-milagros");
+
+const btnEnsenanzasPreguntados =
+document.getElementById("btn-ensenanzas");
+
+const btnLugaresPreguntados =
+document.getElementById("btn-lugares");
+
 const categoriasPreguntados =
 document.querySelector(".categorias-grid");
 
@@ -56,6 +68,119 @@ btnAntiguoPreguntados.addEventListener("click",()=>{
 
         iniciarJuegoPreguntados(
             antiguoTestamentoNivel1
+        );
+
+    },300);
+
+});
+
+btnNuevoPreguntados.addEventListener("click",()=>{
+
+    btnNuevoPreguntados.classList.add(
+    "activa"
+    );
+
+    setTimeout(()=>{
+
+        categoriasPreguntados.style.display =
+        "none";
+
+        juegoPreguntados.classList.remove(
+        "oculto"
+        );
+
+        document.querySelector(
+        ".categoria-activa span"
+        ).textContent =
+        "Nuevo Testamento";
+
+        iniciarJuegoPreguntados(
+        nuevoTestamentoNivel1
+        );
+
+    },300);
+
+});
+
+
+btnMilagrosPreguntados.addEventListener("click",()=>{
+
+    btnMilagrosPreguntados.classList.add(
+    "activa"
+    );
+
+    setTimeout(()=>{
+
+        categoriasPreguntados.style.display =
+        "none";
+
+        juegoPreguntados.classList.remove(
+        "oculto"
+        );
+
+        document.querySelector(
+        ".categoria-activa span"
+        ).textContent =
+        "Milagros y Señales";
+
+        iniciarJuegoPreguntados(
+        milagrosNivel1
+        );
+
+    },300);
+
+});
+
+btnEnsenanzasPreguntados.addEventListener("click",()=>{
+
+    btnEnsenanzasPreguntados.classList.add(
+    "activa"
+    );
+
+    setTimeout(()=>{
+
+        categoriasPreguntados.style.display =
+        "none";
+
+        juegoPreguntados.classList.remove(
+        "oculto"
+        );
+
+        document.querySelector(
+        ".categoria-activa span"
+        ).textContent =
+        "Versículos y Enseñanzas";
+
+        iniciarJuegoPreguntados(
+        ensenanzasNivel1
+        );
+
+    },300);
+
+});
+
+btnLugaresPreguntados.addEventListener("click",()=>{
+
+    btnLugaresPreguntados.classList.add(
+    "activa"
+    );
+
+    setTimeout(()=>{
+
+        categoriasPreguntados.style.display =
+        "none";
+
+        juegoPreguntados.classList.remove(
+        "oculto"
+        );
+
+        document.querySelector(
+        ".categoria-activa span"
+        ).textContent =
+        "Lugares y Eventos";
+
+        iniciarJuegoPreguntados(
+        lugaresNivel1
         );
 
     },300);
